@@ -1,8 +1,8 @@
-# 🐳 Repositório: docker_desafios
+#  Repositório: docker_desafios
 
 ---
 
-## 🛠️ Pré-requisitos
+##  Pré-requisitos
 
 Para executar os desafios, você deve ter instalados:
 
@@ -10,7 +10,7 @@ Para executar os desafios, você deve ter instalados:
 * **Docker Compose:** Versão v2.0.0 ou superior.
 * **Git:** Para clonar o repositório.
 
-## 🚀 Como Executar o Projeto
+##  Como Executar o Projeto
 
 1.  **Clonar o Repositório:**
     ```bash
@@ -29,7 +29,7 @@ Para executar os desafios, você deve ter instalados:
 
 ## 1. Desafio 1 — Containers em Rede
 
-### 💻 Solução e Arquitetura
+###  Solução e Arquitetura
 
 Este desafio demonstra o **DNS interno** provido por uma rede customizada do Docker.
 
@@ -39,7 +39,7 @@ Este desafio demonstra o **DNS interno** provido por uma rede customizada do Doc
 
 A comunicação é feita diretamente pelo nome do serviço, provando que a rede customizada está funcional.
 
-### 🧪 Instruções de Teste
+###  Instruções de Teste
 
 1.  Suba os serviços:
     ```bash
@@ -55,7 +55,7 @@ A comunicação é feita diretamente pelo nome do serviço, provando que a rede 
 
 ## 2. Desafio 2 — Volumes e Persistência
 
-### 💻 Solução e Arquitetura
+###  Solução e Arquitetura
 
 A persistência de dados é garantida pelo uso de um **Volume Nomeado** do Docker, a abordagem recomendada para dados de produção.
 
@@ -85,7 +85,7 @@ A persistência de dados é garantida pelo uso de um **Volume Nomeado** do Docke
 
 ## 3. Desafio 3 — Docker Compose Orquestrando Serviços
 
-### 💻 Solução e Arquitetura
+###  Solução e Arquitetura
 
 O `docker-compose.yml` orquestra uma arquitetura de 3 camadas, utilizando a rede interna `desafio3_rede`.
 
@@ -93,7 +93,7 @@ O `docker-compose.yml` orquestra uma arquitetura de 3 camadas, utilizando a rede
 * **Dependência:** O serviço `web` utiliza `depends_on: [db, cache]` para garantir que os serviços de apoio sejam iniciados antes da aplicação principal.
 * **Comunicação:** Todos os serviços se comunicam usando seus nomes (ex: `db` e `cache`) na rede.
 
-### 🧪 Instruções de Teste
+###  Instruções de Teste
 
 1.  Suba os serviços (Certifique-se que o `.env` esteja criado):
     ```bash
@@ -112,7 +112,7 @@ O `docker-compose.yml` orquestra uma arquitetura de 3 camadas, utilizando a rede
 
 ## 4. Desafio 4 — Microsserviços Independentes
 
-### 💻 Solução e Arquitetura
+###  Solução e Arquitetura
 
 Implementação de dois microsserviços **Flask** com seus respectivos `Dockerfile`s e comunicação direta via HTTP.
 
@@ -122,7 +122,7 @@ Implementação de dois microsserviços **Flask** com seus respectivos `Dockerfi
     * **Comunicação:** Usa a biblioteca `requests` para fazer `GET http://data-service:5000/usuarios`.
     * **Dockerfile:** Instala Flask e a biblioteca `requests`.
 
-### 🧪 Instruções de Teste
+###  Instruções de Teste
 
 1.  Suba os serviços (o `--build` é necessário para compilar as imagens Flask):
     ```bash
@@ -138,7 +138,7 @@ Implementação de dois microsserviços **Flask** com seus respectivos `Dockerfi
 
 ## 5. Desafio 5 — Microsserviços com API Gateway
 
-### 💻 Solução e Arquitetura
+###  Solução e Arquitetura
 
 Implementação de um padrão **API Gateway** usando **Nginx** como *Proxy Reverso* para centralizar o acesso a dois microsserviços internos (Flask).
 
@@ -149,7 +149,7 @@ Implementação de um padrão **API Gateway** usando **Nginx** como *Proxy Rever
     * `/users` -> Proxy para `http://user-service:5000`
     * `/orders` -> Proxy para `http://order-service:5000`
 
-### 🧪 Instruções de Teste
+###  Instruções de Teste
 
 1.  Suba os serviços:
     ```bash
