@@ -1,0 +1,10 @@
+
+# Ignorar o arquivo env
+.env
+
+# Ignorar pastas de cache
+__pycache__/
+*.pyc
+
+# Ignorar volumes Docker locais
+.docker/
