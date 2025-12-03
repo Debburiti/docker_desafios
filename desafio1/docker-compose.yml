@@ -1,0 +1,29 @@
+version: '3.8'
+
+networks:
+  desafio-1:
+    driver: bridge
+
+services:
+  servidor-web:
+    image: nginx
+    container_name: servidor-web
+    networks:
+      - desafio-1
+    ports:
+      - "8080:80"
+
+  cliente-curl:
+    image: alpine
+    container_name: cliente-curl
+    networks:
+      - desafio-1
+    command: >
+      /bin/sh -c "while true; do \
+        echo 'Fazendo requisicao para http://servidor-web/...'; \
+        curl -s http://servidor-web/; \
+        echo -e '\n---'; \
+        sleep 5; \
+      done"
+    depends_on:
+      - servidor-web

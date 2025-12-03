@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  data-service:
+    build: ./data-service
+    container_name: data-service
+    ports:
+      - "5000:5000"
+    networks:
+      - desafio4_rede
+    command: python app.py
+
+  consumer-api:
+    build: ./consumer-api
+    container_name: consumer-api
+    ports:
+      - "5001:5001"
+    networks:
+      - desafio4_rede
+    depends_on:
+      - data-service
+    command: python app.py
+
+networks:
+  desafio4_rede:
+    driver: bridge
